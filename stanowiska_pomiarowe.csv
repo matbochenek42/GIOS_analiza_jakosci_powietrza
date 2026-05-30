@@ -1,0 +1,124 @@
+Identyfikator stanowiska,Identyfikator stacji,Wskaźnik,Wskaźnik - wzór,Wskaźnik - kod,Id wskaźnika
+49,11,tlenek azotu,NO,NO,16
+50,11,dwutlenek azotu,NO2,NO2,6
+51,11,tlenki azotu,NOx,NOx,7
+52,11,ozon,O3,O3,5
+54,11,pył zawieszony PM10,PM10,PM10,3
+101,16,pył zawieszony PM10,PM10,PM10,3
+220,38,tlenek azotu,NO,NO,16
+221,38,dwutlenek azotu,NO2,NO2,6
+222,38,tlenki azotu,NOx,NOx,7
+223,38,ozon,O3,O3,5
+224,38,pył zawieszony PM10,PM10,PM10,3
+25988,38,pył zawieszony PM2.5,PM2.5,PM2.5,69
+276,52,arsen w PM10,As(PM10),As(PM10),60
+278,52,benzo(a)piren w PM10,BaP(PM10),BaP(PM10),61
+282,52,benzen,C6H6,C6H6,10
+284,52,kadm w PM10,Cd(PM10),Cd(PM10),57
+289,52,nikiel w PM10,Ni(PM10),Ni(PM10),58
+290,52,tlenek azotu,NO,NO,16
+291,52,dwutlenek azotu,NO2,NO2,6
+292,52,tlenki azotu,NOx,NOx,7
+293,52,ozon,O3,O3,5
+294,52,ołów w PM10,Pb(PM10),Pb(PM10),55
+295,52,pył zawieszony PM10,PM10,PM10,3
+297,52,dwutlenek siarki,SO2,SO2,1
+14397,52,pył zawieszony PM10,PM10,PM10,3
+32560,52,pył zawieszony PM2.5,PM2.5,PM2.5,69
+388,70,benzo(a)piren w PM10,BaP(PM10),BaP(PM10),61
+396,70,tlenek azotu,NO,NO,16
+397,70,dwutlenek azotu,NO2,NO2,6
+398,70,tlenki azotu,NOx,NOx,7
+400,70,pył zawieszony PM10,PM10,PM10,3
+401,70,pył zawieszony PM10,PM10,PM10,3
+20214,70,ozon,O3,O3,5
+32613,70,pył zawieszony PM2.5,PM2.5,PM2.5,69
+407,71,pył zawieszony PM10,PM10,PM10,3
+18036,71,benzo(a)piren w PM10,BaP(PM10),BaP(PM10),61
+411,74,arsen (całk. depozycja),As(cdepoz),As(cdepoz),82
+412,74,arsen w PM10,As(PM10),As(PM10),60
+413,74,benzo(a)antracen (całk. depozycja),BaA(cdepoz),BaA(cdepoz),38
+414,74,benzo(a)antracen w PM10,BaA(PM10),BaA(PM10),64
+415,74,benzo(a)piren (całk. depozycja),BaP(c.depoz.),BaP(cdepoz),92
+416,74,benzo(a)piren w PM10,BaP(PM10),BaP(PM10),61
+417,74,benzo(b)fluoranten (całk. depozycja),BbF(cdepoz),BbF(cdepoz),39
+418,74,benzo(b)fluoranten w PM10,BbF(PM10),BbF(PM10),65
+419,74,benzo(j)fluoranten (całk. depozycja),BjF(cdepoz),BjF(cdepoz),43
+420,74,benzo(j)fluoranten w PM10,BjF(PM10),BjF(PM10),68
+421,74,benzo(k)fluoranten (całk. depozycja),BkF(cdepoz),BkF(cdepoz),40
+422,74,benzo(k)fluoranten w PM10,BkF(PM10),BkF(PM10),66
+423,74,wapń w PM2.5,Ca2+(PM2.5),Ca2+(PM2.5),47
+424,74,kadm (całk. depozycja),Cd(cdepoz),Cd(cdepoz),80
+425,74,kadm w PM10,Cd(PM10),Cd(PM10),57
+426,74,chlorki w PM2.5,Cl-(PM2.5),Cl_(PM2.5),48
+427,74,"dibenzo(a,h)antracen (całk. depozycja)",DBahA(cdepoz),DBahA(cdepoz),83
+428,74,"dibenzo(a,h)antracen w PM10",DBahA(PM10),DBahA(PM10),63
+429,74,wolny węgiel (EC) w PM2.5,EC(PM2.5),EC(PM2.5),52
+430,74,rtęć (całk. depozycja),Hg(cdepoz),Hg(cdepoz),79
+458,77,arsen w PM10,As(PM10),As(PM10),60
+460,77,benzo(a)piren w PM10,BaP(PM10),BaP(PM10),61
+464,77,kadm w PM10,Cd(PM10),Cd(PM10),57
+468,77,nikiel w PM10,Ni(PM10),Ni(PM10),58
+469,77,ołów w PM10,Pb(PM10),Pb(PM10),55
+470,77,pył zawieszony PM10,PM10,PM10,3
+533,93,benzo(a)piren w PM10,BaP(PM10),BaP(PM10),61
+542,93,pył zawieszony PM10,PM10,PM10,3
+599,109,arsen w PM10,As(PM10),As(PM10),60
+601,109,benzo(a)piren w PM10,BaP(PM10),BaP(PM10),61
+605,109,benzen,C6H6,C6H6,10
+607,109,kadm w PM10,Cd(PM10),Cd(PM10),57
+612,109,nikiel w PM10,Ni(PM10),Ni(PM10),58
+613,109,tlenek azotu,NO,NO,16
+614,109,dwutlenek azotu,NO2,NO2,6
+615,109,tlenki azotu,NOx,NOx,7
+616,109,ozon,O3,O3,5
+617,109,ołów w PM10,Pb(PM10),Pb(PM10),55
+618,109,pył zawieszony PM10,PM10,PM10,3
+619,109,pył zawieszony PM10,PM10,PM10,3
+620,109,pył zawieszony PM2.5,PM2.5,PM2.5,69
+621,109,dwutlenek siarki,SO2,SO2,1
+32600,109,pył zawieszony PM2.5,PM2.5,PM2.5,69
+641,114,tlenek azotu,NO,NO,16
+642,114,dwutlenek azotu,NO2,NO2,6
+643,114,tlenki azotu,NOx,NOx,7
+644,114,ozon,O3,O3,5
+645,115,pył zawieszony PM2.5,PM2.5,PM2.5,69
+652,117,arsen w PM10,As(PM10),As(PM10),60
+653,117,benzo(a)antracen w PM10,BaA(PM10),BaA(PM10),64
+654,117,benzo(a)piren w PM10,BaP(PM10),BaP(PM10),61
+655,117,benzo(b)fluoranten w PM10,BbF(PM10),BbF(PM10),65
+656,117,benzo(j)fluoranten w PM10,BjF(PM10),BjF(PM10),68
+657,117,benzo(k)fluoranten w PM10,BkF(PM10),BkF(PM10),66
+658,117,benzen,C6H6,C6H6,10
+659,117,kadm w PM10,Cd(PM10),Cd(PM10),57
+660,117,tlenek węgla,CO,CO,8
+661,117,"dibenzo(a,h)antracen w PM10",DBahA(PM10),DBahA(PM10),63
+662,117,"indeno(1,2,3-cd)piren w PM10",IP(PM10),IP(PM10),67
+663,117,nikiel w PM10,Ni(PM10),Ni(PM10),58
+664,117,tlenek azotu,NO,NO,16
+665,117,dwutlenek azotu,NO2,NO2,6
+666,117,tlenki azotu,NOx,NOx,7
+667,117,ozon,O3,O3,5
+668,117,ołów w PM10,Pb(PM10),Pb(PM10),55
+669,117,pył zawieszony PM10,PM10,PM10,3
+670,117,pył zawieszony PM2.5,PM2.5,PM2.5,69
+672,117,dwutlenek siarki,SO2,SO2,1
+692,122,benzo(a)piren w PM10,BaP(PM10),BaP(PM10),61
+701,122,pył zawieszony PM10,PM10,PM10,3
+737,129,tlenek węgla,CO,CO,8
+739,129,tlenek azotu,NO,NO,16
+740,129,dwutlenek azotu,NO2,NO2,6
+741,129,tlenki azotu,NOx,NOx,7
+744,129,pył zawieszony PM2.5,PM2.5,PM2.5,69
+766,134,benzo(a)piren w PM10,BaP(PM10),BaP(PM10),61
+780,134,pył zawieszony PM10,PM10,PM10,3
+781,134,pył zawieszony PM2.5,PM2.5,PM2.5,69
+808,142,tlenek azotu,NO,NO,16
+809,142,dwutlenek azotu,NO2,NO2,6
+810,142,tlenki azotu,NOx,NOx,7
+812,142,pył zawieszony PM10,PM10,PM10,3
+818,143,benzo(a)piren w PM10,BaP(PM10),BaP(PM10),61
+828,143,pył zawieszony PM10,PM10,PM10,3
+829,143,pył zawieszony PM10,PM10,PM10,3
+853,145,pył zawieszony PM10,PM10,PM10,3
+880,150,pył zawieszony PM2.5,PM2.5,PM2.5,69

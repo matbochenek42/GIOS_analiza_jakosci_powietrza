@@ -61,11 +61,11 @@ def api_request(api_url, id_list, column_name, base_url = "https://api.gios.gov.
                     no_output.append(i)
                     continue
                 
-                now = pd.Timestamp("now")
+                # now = pd.Timestamp("now")
 
                 if isinstance(api_data, list):
                     if add_id: # dodanie id stacji dla API: df_measures = api_request("data/getData/", id_sensors, "Lista danych pomiarowych", add_id=True) 
-                        api_data = [{**item, item_id: i, "data_dodania": now} for item in api_data]
+                        api_data = [{**item, item_id: i} for item in api_data]
                     results.extend(api_data)
 
                 elif isinstance(api_data, dict): # specjalny warunek dla: df_air = api_request("aqindex/getIndex/", id_stations, "AqIndex")

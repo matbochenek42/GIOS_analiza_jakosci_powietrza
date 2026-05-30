@@ -1,0 +1,21 @@
+Identyfikator stacji,Kod stacji,Nazwa stacji,Szerokość geograficzna (N),Długość geograficzna (E),Identyfikator miasta,Nazwa miasta,Gmina,Powiat,Województwo,Ulica
+11,DsCzerStraza,Czerniawa,50.912475,15.312190,142,Czerniawa,Świeradów-Zdrój,lubański,Dolnośląskie,ul. Strażacka 7
+16,DsDziePilsud,"Dzierżoniów, ul. Piłsudskiego",50.732817,16.648050,198,Dzierżoniów,Dzierżoniów,dzierżoniowski,Dolnośląskie,ul. Piłsudskiego 26
+38,DsKlodzSzkol,"Kłodzko, ul. Szkolna",50.433493,16.653660,368,Kłodzko,Kłodzko,kłodzki,Dolnośląskie,ul. Szkolna 8
+52,DsLegAlRzecz,"Legnica, Al. Rzeczypospolitej",51.204503,16.180513,453,Legnica,Legnica,Legnica,Dolnośląskie,Al. Rzeczypospolitej 10/12
+70,DsOlawZolnAK,"Oława, ul. Żołnierzy Armii Krajowej",50.942073,17.291333,642,Oława,Oława,oławski,Dolnośląskie,ul. Żołnierzy AK 9
+71,DsOlesBrzozo,"Oleśnica, ul. Brzozowa",51.217483,17.389997,637,Oleśnica,Oleśnica,oleśnicki,Dolnośląskie,ul. Brzozowa 7
+74,DsOsieczow21,Osieczów,51.317630,15.431719,648,Osieczów,Osiecznica,bolesławiecki,Dolnośląskie,
+77,DsPolKasztan,"Polkowice, ul. Kasztanowa",51.502370,16.075051,721,Polkowice,Polkowice,polkowicki,Dolnośląskie,ul. Kasztanowa 29
+93,DsSzczaKolej,"Szczawno-Zdrój, ul. Kolejowa",50.804189,16.254111,915,Szczawno-Zdrój,Szczawno-Zdrój,wałbrzyski,Dolnośląskie,ul. Kolejowa 14
+109,DsWalbrzWyso,"Wałbrzych, ul. Wysockiego",50.768729,16.269677,998,Wałbrzych,Wałbrzych,Wałbrzych,Dolnośląskie,ul. Wysockiego 11
+114,DsWrocBartni,"Wrocław, ul. Bartnicza",51.115933,17.141125,1064,Wrocław,Wrocław,Wrocław,Dolnośląskie,ul. Bartnicza
+115,DsWrocNaGrob,"Wrocław, ul. Na Grobli",51.103456,17.059225,1064,Wrocław,Wrocław,Wrocław,Dolnośląskie,ul. Na Grobli
+117,DsWrocWybCon,"Wrocław, wyb. Conrada-Korzeniowskiego",51.129378,17.029250,1064,Wrocław,Wrocław,Wrocław,Dolnośląskie,ul. Wyb. J.Conrada-Korzeniowskiego 18
+122,DsWrocOrzech,"Wrocław, ul. Orzechowa",51.077525,17.042817,1064,Wrocław,Wrocław,Wrocław,Dolnośląskie,ul. Orzechowa 61
+129,DsWrocAlWisn,"Wrocław, Al. Wiśniowa",51.086225,17.012689,1064,Wrocław,Wrocław,Wrocław,Dolnośląskie,Al. Wiśniowa/ul. Powst. Śląskich
+134,DsZgorBohGet,"Zgorzelec, ul. Bohaterów Getta",51.150391,15.008175,1101,Zgorzelec,Zgorzelec,zgorzelecki,Dolnośląskie,ul. Bohaterów Getta 1a
+142,KpGrudPilsud,"Grudziądz, ul. Piłsudskiego",53.493550,18.762139,269,Grudziądz,Grudziądz,Grudziądz,Kujawsko-pomorskie,ul. Piłsudskiego 51
+143,KpInowSolank,"Inowrocław, ul. Solankowa",52.793122,18.241044,287,Inowrocław,Inowrocław,inowrocławski,Kujawsko-pomorskie,ul. Solankowa
+145,KpToruWSikor,"Toruń, ul. Wały gen. Sikorskiego",53.012475,18.605681,966,Toruń,Toruń,Toruń,Kujawsko-pomorskie,ul. Wały gen. Sikorskiego 12
+150,KpBydFieldor,"Bydgoszcz, ul. Fieldorfa",53.151452,18.132062,90,Bydgoszcz,Bydgoszcz,Bydgoszcz,Kujawsko-pomorskie,ul. gen. Augusta Emila Fieldorfa „Nila” 13
