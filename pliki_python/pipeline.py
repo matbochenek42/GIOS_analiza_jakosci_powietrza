@@ -2,6 +2,7 @@
 
 import pandas as pd
 import os
+from datetime import datetime
 from api_request import stations, api_request
 
 def run_pipeline():
@@ -29,7 +30,6 @@ def run_pipeline():
 
 
     # zmiana nazw kolumn (kod wygenerowany przez czat GPT)
-
     df_air = df_air.rename(columns={
         'Identyfikator stacji pomiarowej': 'id_stacji',
         'Data wykonania obliczeń indeksu': 'data_obliczenia',
@@ -87,18 +87,27 @@ def run_pipeline():
     cols = ["wartosc_indeksu", "so2_wartosc", "no2_wartosc", "pm10_wartosc", "pm25_wartosc", "o3_wartosc"]
     df_air[cols] = df_air[cols].astype("Int64")
 
+    # tworzenie ścieżek i folderów
+    main_folder = "dane"
+    measures_folder = f"{main_folder}/pomiary"
+    air_folder = f"{main_folder}/powietrze"
 
-    folder = "dane"
-    os.makedirs(folder, exist_ok=True)
+    os.makedirs(main_folder, exist_ok=True)
+    os.makedirs(measures_folder, exist_ok=True)
+    os.makedirs(air_folder, exist_ok=True)
 
-    df_stations.to_csv(f"{folder}/stacje_pomiarowe.csv", mode="w", index=False, encoding="utf-8-sig")
-    df_sensors.to_csv(f"{folder}/stanowiska_pomiarowe.csv", mode="w", index=False, encoding="utf-8-sig")
+    df_stations.to_csv(f"{main_folder}/stacje_pomiarowe.csv", mode="w", index=False, encoding="utf-8-sig")
+    df_sensors.to_csv(f"{main_folder}/stanowiska_pomiarowe.csv", mode="w", index=False, encoding="utf-8-sig")
 
-    sciezka_pomiary = f"{folder}/dane_pomiarowe.csv"
-    df_measures.to_csv(sciezka_pomiary, mode="a", index=False, encoding="utf-8-sig", header=not pd.io.common.file_exists(sciezka_pomiary))
+    # partycjonowanie plików wg. miesięca i roku
+    now = datetime.now()
+    current_month = now.strftime("%Y_%m")
 
-    sciezka_powietrze = f"{folder}/jakosc_powietrza.csv"
-    df_air.to_csv(sciezka_powietrze, mode="a", index=False, encoding="utf-8-sig", header=not pd.io.common.file_exists(sciezka_powietrze))
+    measures_path = f"{measures_folder}/dane_pomiarowe_{current_month}.csv"
+    df_measures.to_csv(measures_path, mode="a", index=False, encoding="utf-8-sig", header=not pd.io.common.file_exists(measures_path))
+
+    air_path = f"{air_folder}/jakosc_powietrza_{current_month}.csv"
+    df_air.to_csv(air_path, mode="a", index=False, encoding="utf-8-sig", header=not pd.io.common.file_exists(air_path))
 
     # encoding="utf-8-sig" -> żeby nie było błędów w Power Query
     # header=not pd.io.common.file_exists("jakosc_powietrza.csv") -> jeśli plik istnieje dodaj też nazwy kolumn, jeśli nie to nie dodawaj nazw kolumn
