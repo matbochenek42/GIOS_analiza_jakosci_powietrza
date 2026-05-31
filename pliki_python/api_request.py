@@ -8,7 +8,7 @@ import requests
 
 def stations(): # Stacje pomiarowe
     
-    print("Trwa ładowanie danych z API do DataFrame...\n")
+    print("\nTrwa ładowanie danych z API do DataFrame...")
 
     results = [] # pusta lista, która ma służyć do zapisu danych i konwersji do DataFrame
     url_stations = "https://api.gios.gov.pl/pjp-api/v1/rest/station/findAll" # API url
@@ -24,14 +24,14 @@ def stations(): # Stacje pomiarowe
         results.extend(station) # dodawanie danych do listy
 
     except requests.exceptions.RequestException as e:
-        print(f"Nie udało się połączyć z API ❌")
+        print(f"Nie udało się połączyć z API dla stacji pomiarowych❌")
         # print(e)
 
     if results:
-        print("Poprawno załadowano dane ✅")
+        print("Poprawno załadowano dane dla stacji pomiarowych✅")
         return pd.DataFrame(results) # DataFrame
     else:
-        print("Połączono z API, ale nie zwróciło żadnych danych ⚠️")
+        print("Połączono z API, ale nie zwróciło żadnych danych dla stacji pomiarowych ⚠️")
         return pd.DataFrame()
 
 
@@ -39,7 +39,7 @@ def stations(): # Stacje pomiarowe
 
 def api_request(api_url, id_list, column_name, base_url = "https://api.gios.gov.pl/pjp-api/v1/rest/", item_id = None, add_id = False): # opcjonalnie dodać add_date = False
     
-    print("Trwa ładowanie danych z API do DataFrame...\n")
+    print("\nTrwa ładowanie danych z API do DataFrame...")
 
     results = []
     no_output = []
