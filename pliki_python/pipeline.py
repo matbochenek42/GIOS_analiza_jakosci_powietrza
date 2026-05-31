@@ -1,6 +1,7 @@
 # plik eksportowany z overview_danych.ipynb
 
 import pandas as pd
+import os
 from api_request import stations, api_request
 
 def run_pipeline():
@@ -86,13 +87,25 @@ def run_pipeline():
     cols = ["wartosc_indeksu", "so2_wartosc", "no2_wartosc", "pm10_wartosc", "pm25_wartosc", "o3_wartosc"]
     df_air[cols] = df_air[cols].astype("Int64")
 
-    df_stations.to_csv("stacje_pomiarowe.csv", mode="w", index=False)
-    df_sensors.to_csv("stanowiska_pomiarowe.csv", mode="w", index=False)
-    df_measures.to_csv("dane_pomiarowe.csv", mode="a", index=False, encoding="utf-8-sig", header=not pd.io.common.file_exists("dane_pomiarowe.csv"))
-    df_air.to_csv("jakosc_powietrza.csv", mode="a", index=False, encoding="utf-8-sig", header=not pd.io.common.file_exists("jakosc_powietrza.csv"))
+
+    folder = "dane"
+    os.makedirs(folder, exist_ok=True)
+
+    df_stations.to_csv(f"{folder}/stacje_pomiarowe.csv", mode="w", index=False, encoding="utf-8-sig")
+    df_sensors.to_csv(f"{folder}/stanowiska_pomiarowe.csv", mode="w", index=False, encoding="utf-8-sig")
+
+    sciezka_pomiary = f"{folder}/dane_pomiarowe.csv"
+    df_measures.to_csv(sciezka_pomiary, mode="a", index=False, encoding="utf-8-sig", header=not pd.io.common.file_exists(sciezka_pomiary))
+
+    sciezka_powietrze = f"{folder}/jakosc_powietrza.csv"
+    df_air.to_csv(sciezka_powietrze, mode="a", index=False, encoding="utf-8-sig", header=not pd.io.common.file_exists(sciezka_powietrze))
 
     # encoding="utf-8-sig" -> żeby nie było błędów w Power Query
     # header=not pd.io.common.file_exists("jakosc_powietrza.csv") -> jeśli plik istnieje dodaj też nazwy kolumn, jeśli nie to nie dodawaj nazw kolumn
 
 if __name__ == "__main__":
     run_pipeline()
+
+# jeszcze raz trzeba chyba dać usunięcie duplikatów
+# pipeline co 19 godzin
+# o równo 10 nie ma jeszcze nowych danych, ale 2 po już są

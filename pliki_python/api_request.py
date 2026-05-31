@@ -43,11 +43,13 @@ def api_request(api_url, id_list, column_name, base_url = "https://api.gios.gov.
 
     results = []
     no_output = []
-    item_count = 0
+    item_count = 1
 
     with requests.Session() as session:
         for i in id_list:
             url = f"{base_url}{api_url}{i}"
+
+            item_count += 1
 
             try:
                 response = session.get(url, timeout=10)

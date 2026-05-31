@@ -1,4 +1,4 @@
-Identyfikator stacji,Kod stacji,Nazwa stacji,Szerokość geograficzna (N),Długość geograficzna (E),Identyfikator miasta,Nazwa miasta,Gmina,Powiat,Województwo,Ulica
+﻿Identyfikator stacji,Kod stacji,Nazwa stacji,Szerokość geograficzna (N),Długość geograficzna (E),Identyfikator miasta,Nazwa miasta,Gmina,Powiat,Województwo,Ulica
 11,DsCzerStraza,Czerniawa,50.912475,15.312190,142,Czerniawa,Świeradów-Zdrój,lubański,Dolnośląskie,ul. Strażacka 7
 16,DsDziePilsud,"Dzierżoniów, ul. Piłsudskiego",50.732817,16.648050,198,Dzierżoniów,Dzierżoniów,dzierżoniowski,Dolnośląskie,ul. Piłsudskiego 26
 38,DsKlodzSzkol,"Kłodzko, ul. Szkolna",50.433493,16.653660,368,Kłodzko,Kłodzko,kłodzki,Dolnośląskie,ul. Szkolna 8
