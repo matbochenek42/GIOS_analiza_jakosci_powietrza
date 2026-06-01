@@ -32,7 +32,7 @@ jobs:
       # polska strefy czasowa dla pipeline.py
       env:
         TZ: Europe/Warsaw
-      run: python pipeline.py
+      run: python pliki_python/pipeline.py
 
     - name: Commit and Push changes
       run: |
