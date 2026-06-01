@@ -6,6 +6,9 @@ from datetime import datetime
 from api_request import stations, api_request
 
 def run_pipeline():
+    """
+    zapis danych do dataframe, czyszczenie danych, usuwanie duplikatów, zapis do pliku csv
+    """
     # Stacje pomiarowe
     df_stations = stations()
     id_stations = df_stations["Identyfikator stacji"].unique().tolist() # lista z id stacji, potrzebne do innych url API
@@ -29,7 +32,7 @@ def run_pipeline():
     }, inplace=True)
 
 
-    # zmiana nazw kolumn (kod wygenerowany przez czat GPT)
+    # zmiana nazw kolumn 
     df_air = df_air.rename(columns={
         'Identyfikator stacji pomiarowej': 'id_stacji',
         'Data wykonania obliczeń indeksu': 'data_obliczenia',
@@ -99,22 +102,40 @@ def run_pipeline():
     df_stations.to_csv(f"{main_folder}/stacje_pomiarowe.csv", mode="w", index=False, encoding="utf-8-sig")
     df_sensors.to_csv(f"{main_folder}/stanowiska_pomiarowe.csv", mode="w", index=False, encoding="utf-8-sig")
 
-    # partycjonowanie plików wg. miesięca i roku
+    # partycjonowanie plików wg. aktualnego miesięca i roku
     now = datetime.now()
     current_month = now.strftime("%Y_%m")
 
     measures_path = f"{measures_folder}/dane_pomiarowe_{current_month}.csv"
-    df_measures.to_csv(measures_path, mode="a", index=False, encoding="utf-8-sig", header=not pd.io.common.file_exists(measures_path))
-
     air_path = f"{air_folder}/jakosc_powietrza_{current_month}.csv"
-    df_air.to_csv(air_path, mode="a", index=False, encoding="utf-8-sig", header=not pd.io.common.file_exists(air_path))
+    
+    # usuwanie potencjalnych duplikatów między nowym df a istniejącymi już danymi w pliku csv
+    if os.path.exists(measures_path):
+        existing_measures_keys = pd.read_csv(measures_path, usecols=["Kod stanowiska", "Data"]) # odczyt tylko istotnych kolumn
+        
+        # dopasowanie kluczy 
+        # zostają tylko wiersze unikalne dla nowych wierszy
+        merged_measures = df_measures.merge(existing_measures_keys, on=["Kod stanowiska", "Data"], how="left", indicator=True)
+        df_measures = merged_measures[merged_measures["_merge"] == "left_only"].drop(columns=["_merge"])
+
+    # zapis do csv jeśli są nowe wiersze
+    if not df_measures.empty:
+        df_measures.to_csv(measures_path, mode="a", index=False, encoding="utf-8-sig", header=not os.path.exists(measures_path))
+
+    if os.path.exists(air_path):
+        existing_air_keys = pd.read_csv(air_path, usecols=["id_stacji", "data_obliczenia"])
+        
+        # existing_air_keys["id_stacji"] = existing_air_keys["id_stacji"].astype(int)
+        
+        merged_air = df_air.merge(existing_air_keys, on=["id_stacji", "data_obliczenia"], how="left", indicator=True)
+        df_air = merged_air[merged_air["_merge"] == "left_only"].drop(columns=["_merge"])
+
+
+    if not df_air.empty:
+        df_air.to_csv(air_path, mode="a", index=False, encoding="utf-8-sig", header=not os.path.exists(air_path))
 
     # encoding="utf-8-sig" -> żeby nie było błędów w Power Query
-    # header=not pd.io.common.file_exists("jakosc_powietrza.csv") -> jeśli plik istnieje dodaj też nazwy kolumn, jeśli nie to nie dodawaj nazw kolumn
+    # header=not os.path.exists("jakosc_powietrza.csv") -> jeśli plik nie istnieje dodaj też nazwy kolumn, jeśli istnieje to nie dodawaj nazw kolumn
 
 if __name__ == "__main__":
     run_pipeline()
-
-# jeszcze raz trzeba chyba dać usunięcie duplikatów
-# pipeline co 19 godzin
-# o równo 10 nie ma jeszcze nowych danych, ale 2 po już są

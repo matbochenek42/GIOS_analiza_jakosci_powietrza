@@ -1,5 +1,4 @@
 """
-Ten plik ma za zadanie pobrać dane (za pomocą API) i załadować je do DataFrame
 Dokumentacja API: https://powietrze.gios.gov.pl/pjp/content/api
 """
 
@@ -7,6 +6,9 @@ import pandas as pd
 import requests
 
 def stations(): # Stacje pomiarowe
+    """
+    Ta funkcja ma za zadanie pobrać dane (za pomocą API) i załadować je do DataFrame
+    """
     
     print("\nTrwa ładowanie danych z API do DataFrame...")
 
@@ -35,21 +37,20 @@ def stations(): # Stacje pomiarowe
         return pd.DataFrame()
 
 
-# poniższa funkcja działa podobnie jak ww. funkcja stations(), natomiast zawiera ona element iteracji przez ID z innych dataframe'ów 
-
 def api_request(api_url, id_list, column_name, base_url = "https://api.gios.gov.pl/pjp-api/v1/rest/", item_id = None, add_id = False): # opcjonalnie dodać add_date = False
-    
-    print("\nTrwa ładowanie danych z API do DataFrame...")
+
+    """
+    poniższa funkcja działa podobnie jak ww. funkcja stations(), natomiast zawiera ona element iteracji przez ID z innych dataframe'ów 
+    """
+
+    print(f"\nTrwa ładowanie danych z '{api_url}' do DataFrame...")
 
     results = []
     no_output = []
-    item_count = 1
 
     with requests.Session() as session:
         for i in id_list:
             url = f"{base_url}{api_url}{i}"
-
-            item_count += 1
 
             try:
                 response = session.get(url, timeout=10)
@@ -81,12 +82,17 @@ def api_request(api_url, id_list, column_name, base_url = "https://api.gios.gov.
             except requests.exceptions.RequestException as e: # liczenie iteracji dla którego nie nawiązano połączenia
                 no_output.append(i)
 
+        total_items = len(id_list)
         if no_output:
-            print(f"Nie udało się połączyć z API dla '{column_name}'. {len(no_output)} z {item_count} wszystkich wartości nie dodano do DataFrame ❌")
+            print(f"Nie udało się połączyć z API dla '{column_name}'. {len(no_output)} z {total_items} wszystkich wartości nie dodano do DataFrame ❌")
         else:
             print(f"Wszystkie wartości dla '{column_name}' zostały załadowane ✅")
 
-        return pd.DataFrame(results)
+        if len(no_output) == total_items:
+            print("Połączono z API, ale nie zwróciło żadnych danych dla stacji pomiarowych ⚠️")
+            return pd.DataFrame()
+        else:
+            return pd.DataFrame(results)
 
 """
 # Stacje pomiarowe
