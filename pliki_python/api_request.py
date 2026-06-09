@@ -4,6 +4,7 @@ Dokumentacja API: https://powietrze.gios.gov.pl/pjp/content/api
 
 import pandas as pd
 import requests
+import sys
 
 def stations(): # Stacje pomiarowe
     """
@@ -25,16 +26,16 @@ def stations(): # Stacje pomiarowe
         station = data_stations.get("Lista stacji pomiarowych", [])
         results.extend(station) # dodawanie danych do listy
 
-    except requests.exceptions.RequestException as e:
+    except requests.exceptions.RequestException:
         print(f"Nie udało się połączyć z API dla stacji pomiarowych❌")
-        # print(e)
+        sys.exit(1) 
 
     if results:
         print("Poprawno załadowano dane dla stacji pomiarowych✅")
         return pd.DataFrame(results) # DataFrame
     else:
         print("Połączono z API, ale nie zwróciło żadnych danych dla stacji pomiarowych ⚠️")
-        return pd.DataFrame()
+        sys.exit(1) 
 
 
 def api_request(api_url, id_list, column_name, base_url = "https://api.gios.gov.pl/pjp-api/v1/rest/", item_id = None, add_id = False): # opcjonalnie dodać add_date = False
@@ -79,7 +80,7 @@ def api_request(api_url, id_list, column_name, base_url = "https://api.gios.gov.
                     """
                     results.append(api_data)
 
-            except requests.exceptions.RequestException as e: # liczenie iteracji dla którego nie nawiązano połączenia
+            except requests.exceptions.RequestException: # liczenie iteracji dla którego nie nawiązano połączenia
                 no_output.append(i)
 
         total_items = len(id_list)

@@ -9,7 +9,7 @@ def run_pipeline():
     """
     zapis danych do dataframe, czyszczenie danych, usuwanie duplikatów, zapis do pliku csv
     """
-    # Stacje pomiarowe
+    # Stacje pomiarowe                       # tu by się przydało dać obsługę wyjątków?
     df_stations = stations()
     id_stations = df_stations["Identyfikator stacji"].unique().tolist() # lista z id stacji, potrzebne do innych url API
 
