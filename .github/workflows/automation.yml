@@ -2,7 +2,7 @@ name: GIOŚ Pipeline
 
 on:
   schedule:
-    - cron: '0 */19 * * *' # co 19 godzin (wg czasu UTC)
+    - cron: '0 */9 * * *' # co 19 godzin (wg czasu UTC)
   workflow_dispatch:      # ręczne uruchomienie przyciskiem
 
 jobs:
