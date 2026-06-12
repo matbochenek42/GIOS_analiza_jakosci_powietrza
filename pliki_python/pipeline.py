@@ -2,6 +2,8 @@
 
 import pandas as pd
 import os
+import sys
+
 from datetime import datetime
 from api_request import stations, api_request
 
@@ -9,8 +11,10 @@ def run_pipeline():
     """
     zapis danych do dataframe, czyszczenie danych, usuwanie duplikatów, zapis do pliku csv
     """
-    # Stacje pomiarowe                       # tu by się przydało dać obsługę wyjątków?
+    # Stacje pomiarowe                     
     df_stations = stations()
+    if df_stations is None: # jeśli brak zwróconego dataframe dla stations to koniec programu
+        sys.exit(1)
     id_stations = df_stations["Identyfikator stacji"].unique().tolist() # lista z id stacji, potrzebne do innych url API
 
     # Stanowiska pomiarowe
