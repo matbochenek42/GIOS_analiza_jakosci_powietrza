@@ -93,19 +93,3 @@ def api_request(api_url, id_list, column_name, base_url = "https://api.gios.gov.
             return pd.DataFrame()
         else:
             return pd.DataFrame(results)
-
-"""
-# Stacje pomiarowe
-df_stations = stations()
-id_stations = df_stations["Identyfikator stacji"].unique().tolist() # lista z id stacji, potrzebne do innych url API
-
-# Stanowiska pomiarowe
-df_sensors = api_request("station/sensors/", id_stations, "Lista stanowisk pomiarowych dla podanej stacji") # lista stanowisk pomiarowych dostępnych na wybranej stacji pomiarowej
-id_sensors = df_sensors["Identyfikator stanowiska"].unique().tolist() # lista z id stanowisk, potrzebne do innych url API
-
-# Dane pomiarowe 
-df_measures = api_request("data/getData/", id_sensors, "Lista danych pomiarowych", item_id = "id_stacji", add_id=True) # dane pomiarowe na podstawie podanego identyfikatora stanowiska pomiarowego
-
-# Indeks jakości powietrza
-df_air = api_request("aqindex/getIndex/", id_stations, "AqIndex") # indeksy jakości powietrza na podstawie podanego identyfikatora stacji pomiarowej
-"""

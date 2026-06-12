@@ -22,7 +22,7 @@ def run_pipeline():
     id_sensors = df_sensors["Identyfikator stanowiska"].unique().tolist() # lista z id stanowisk, potrzebne do innych url API
 
     # Dane pomiarowe 
-    df_measures = api_request("data/getData/", id_sensors, "Lista danych pomiarowych", item_id = "id_stacji", add_id=True) 
+    df_measures = api_request("data/getData/", id_sensors, "Lista danych pomiarowych", item_id = "id_stanowisk", add_id=True) 
 
     # Indeks jakości powietrza
     df_air = api_request("aqindex/getIndex/", id_stations, "AqIndex")
