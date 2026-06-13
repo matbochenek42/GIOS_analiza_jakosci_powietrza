@@ -13,8 +13,8 @@ def run_pipeline():
     """
     # Stacje pomiarowe                     
     df_stations = stations()
-    #if df_stations is None: # jeśli brak zwróconego dataframe dla stations to koniec programu
-        #sys.exit(1)
+    if df_stations is None: # jeśli brak zwróconego dataframe dla stations to koniec programu
+        sys.exit(1)
     id_stations = df_stations["Identyfikator stacji"].unique().tolist() # lista z id stacji, potrzebne do innych url API
 
     # Stanowiska pomiarowe
