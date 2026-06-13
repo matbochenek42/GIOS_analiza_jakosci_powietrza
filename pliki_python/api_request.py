@@ -28,14 +28,14 @@ def stations(): # Stacje pomiarowe
 
     except requests.exceptions.RequestException:
         print(f"Nie udało się połączyć z API dla stacji pomiarowych❌")
-        sys.exit(1)
+        # sys.exit(1)
 
     if results:
         print("Poprawno załadowano dane dla stacji pomiarowych✅")
         return pd.DataFrame(results) # DataFrame
     else:
         print("Połączono z API, ale nie zwróciło żadnych danych dla stacji pomiarowych ⚠️")
-        sys.exit(1)
+        # sys.exit(1)
 
 def api_request(api_url, id_list, column_name, base_url = "https://api.gios.gov.pl/pjp-api/v1/rest/", item_id = None, add_id = False): # opcjonalnie dodać add_date = False
 
