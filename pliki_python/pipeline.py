@@ -2,7 +2,6 @@
 
 import pandas as pd
 import os
-import sys
 
 from datetime import datetime
 from api_request import stations, api_request
@@ -14,7 +13,7 @@ def run_pipeline():
     # Stacje pomiarowe                     
     df_stations = stations()
     if df_stations is None: # jeśli brak zwróconego dataframe dla stations to koniec programu
-        sys.exit(1)
+        df_stations = pd.read_csv(r"dane/stacje_pomiarowe.csv")
     id_stations = df_stations["Identyfikator stacji"].unique().tolist() # lista z id stacji, potrzebne do innych url API
 
     # Stanowiska pomiarowe
