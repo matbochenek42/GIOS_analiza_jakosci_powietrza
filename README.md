@@ -1,10 +1,22 @@
+# 💨 GIOŚ - analiza jakości powietrza
+
+## 🔎 Intro
+
+Niniejsze repozytorium skupia się na projekcie analizy danych pochodzących z API Głównego Inspektoriatu Ochrony Środowiska. Projekt ten można podzielić na cztery główne elementy:
+
+- **Krok 1:** Pobranie cogodzinnych danych ze strony [powietrze.gios.gov.pl](https://powietrze.gios.gov.pl/pjp/content/api) przy użyciu skryptu Pythona - [api_request.py](pliki_python/api_request.py).
+
+- **Krok 2:** Czyszczenie i zapis danych do plików CSV w Pandas w pliku [pipeline.py](pliki_python/pipeline.py).
+
+- **Krok 3:** Automatyzacja pliku [pipeline.py](pliki_python/pipeline.py) w Github Actions za pomocą pliku [automation.yml](.github\workflows/automation.yml) (co 8 godzin).
+
+- **Krok 4:** Analiza i wizalizacja danych w Excelu - [analiza.xlsx](analiza.xlsx).
+
+Pozwala to na codzienne automatyczne pobieranie danych za pomocą API (wraz z usuwaniem duplikatów i czyszczeniem danych), zapis na chmurze (Github Actions) i automatycznym pobieraniem tych danych w Excelu (Power Query).
+
 Źródło danych: GIOŚ - EKOINFONET https://powietrze.gios.gov.pl/pjp/content/api
 
-
-to do:
-prezentacja power point
-readme update
-excel 
+## ⚙️ How to Run
 
 Pyły zawieszone (PM 2.5 i PM 10)
 
