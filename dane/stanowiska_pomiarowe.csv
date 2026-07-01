@@ -25,6 +25,14 @@
 297,52,dwutlenek siarki,SO2,SO2,1
 14397,52,pył zawieszony PM10,PM10,PM10,3
 32560,52,pył zawieszony PM2.5,PM2.5,PM2.5,69
+388,70,benzo(a)piren w PM10,BaP(PM10),BaP(PM10),61
+396,70,tlenek azotu,NO,NO,16
+397,70,dwutlenek azotu,NO2,NO2,6
+398,70,tlenki azotu,NOx,NOx,7
+400,70,pył zawieszony PM10,PM10,PM10,3
+401,70,pył zawieszony PM10,PM10,PM10,3
+20214,70,ozon,O3,O3,5
+32613,70,pył zawieszony PM2.5,PM2.5,PM2.5,69
 407,71,pył zawieszony PM10,PM10,PM10,3
 18036,71,benzo(a)piren w PM10,BaP(PM10),BaP(PM10),61
 411,74,arsen (całk. depozycja),As(cdepoz),As(cdepoz),82
